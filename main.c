@@ -28,7 +28,7 @@ void inserir(paciente **p)
     paciente *atual, *novo, *anterior;
 	
     int num;
-		char nome[20];
+		char nome[20] , sobrenome[20];
 
     novo = (paciente *) malloc(sizeof(paciente));
 
@@ -37,11 +37,12 @@ void inserir(paciente **p)
 
     printf("Insira um valor: ");
     scanf("%d", &num);
-		printf("Digite um nome");
-		scanf("%s" , nome);
+		printf("Digite o nome completo:");
+		scanf("%s%s" , nome , sobrenome);
 
     novo->valor = num;
 		strcpy( novo->nome, nome);
+		strcpy( novo->sobrenome, sobrenome);
 
     if(atual == NULL){
         novo->prox = NULL;
@@ -64,11 +65,15 @@ void inserir(paciente **p)
 }
 
 void mostraLista(paciente *p){
-	printf("Lista: \n");
+	printf("Lista: \n \n");
     while(p != NULL)
-    {
+    {		
+				printf("-> Paciente: ");
         printf("%d \n", p->valor);
-				printf("%s \n", p->nome);
+				printf("Nome : ");
+				printf("%s ", p->nome);
+				printf("%s", p->sobrenome);
+				printf("\n\n");
         p = p->prox;
     }
 }
@@ -82,7 +87,7 @@ int main(void){
 		printf(AZUL" \n \n ------------------ Menu ---------------- \n" RESET);
 		printf(" 1 - 📝Cadastrar Paciente \n 2 - 🚶Remover Paciente \n 3 - 🔍Pesquisar Paciente por nível de urgência \n");
 		printf(" 4 - 📋Visualizar fila completa \n 5 - 📋Visualizar fila por tipo de urgência \n 6 - 📋Consultar situação da fila \n");
-		printf("7 - Sair 👋\n");
+		printf(" 7 - Sair 👋\n");
 		printf("Digite uma Opção: ");
 		int op;
 		scanf("%d", &op);
