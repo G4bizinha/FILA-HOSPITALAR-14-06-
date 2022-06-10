@@ -82,7 +82,7 @@ int main(void){
 		printf(AZUL" \n \n ------------------ Menu ---------------- \n" RESET);
 		printf(" 1 - 📝Cadastrar Paciente \n 2 - 🚶Remover Paciente \n 3 - 🔍Pesquisar Paciente por nível de urgência \n");
 		printf(" 4 - 📋Visualizar fila completa \n 5 - 📋Visualizar fila por tipo de urgência \n 6 - 📋Consultar situação da fila \n");
-		printf("7 - Sair ");
+		printf("7 - Sair 👋\n");
 		printf("Digite uma Opção: ");
 		int op;
 		scanf("%d", &op);
