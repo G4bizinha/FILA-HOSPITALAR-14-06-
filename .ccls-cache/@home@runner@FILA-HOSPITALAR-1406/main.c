@@ -3,6 +3,7 @@
 #include <locale.h> 
 #include <string.h>
 #include <unistd.h>
+#include "mensagens.h"
 
 int controleMenu=1;
 
@@ -22,6 +23,11 @@ int controleMenu=1;
   };
 
 typedef struct Paciente paciente;
+
+void Mensagens(){
+	
+}
+
 
 void inserir(paciente **p)
 {
@@ -62,6 +68,14 @@ void inserir(paciente **p)
             anterior->prox = novo;
         }
     }
+}//Inserir
+
+void remover (paciente *p){
+  printf("--------- 🚶Remover Paciente da Fila ---------- \n");
+}
+
+void pesquisar(paciente *p){
+  
 }
 
 void mostraLista(paciente *p){
