@@ -85,7 +85,6 @@ void remover(paciente *p){
 		}
 	}
 
-
 void pesquisar(paciente *p){
 	char nome[20] , sobrenome[20];
   printf("Qual o nome do paciente que você deseja procurar?");
@@ -107,7 +106,9 @@ void mostraLista(paciente *p){
 }
 
 void mostraListaTipoUrg(paciente *p){
+	char prioridade;
 	printf("qual a urgência?");
+  scanf("%c" , &prioridade);
 
 
 	if(p->prioridade == 'V' || p-> prioridade == 'v'){
@@ -118,12 +119,28 @@ void mostraListaTipoUrg(paciente *p){
 				printf("Nome : ");
 				printf("%s ", p->nome);
 				printf("%s", p->sobrenome);
-        printf("Prioridade")
+        printf("Prioridade: ");
+        printf("%c" , p->prioridade);
 				printf("\n ");
         p = p->prox;
 		
-	}
-}
+	  }//while
+  }//if
+    else if(p->prioridade == 'A' || p-> prioridade == 'a'){
+    printf("Lista: \n ");
+    while(p != NULL){		
+				printf("-> Paciente: ");
+        printf("%d \n", p->valor);
+				printf("Nome : ");
+				printf("%s ", p->nome);
+				printf("%s", p->sobrenome);
+        printf("Prioridade: ");
+        printf("%c" , p->prioridade);
+				printf("\n ");
+        p = p->prox;
+    }//while
+  }//else if   
+}//void lista tipo urgência
 
 void consultarFila(paciente *p){
   
