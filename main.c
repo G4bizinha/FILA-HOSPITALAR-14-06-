@@ -125,12 +125,17 @@ void mostraListaTipoUrg(paciente *p){
   printf(AZUL" \n \n ----- 📋Visualizar Fila por tipo de Urgência ----- \n" RESET);
 	char prioridade;
 	printf("qual a urgência?");
+	printf(VERDE" V - verde"RESET);
+  printf("|"); 
+  printf(AMARELO"A- Amarelo"RESET);
   scanf("%c" , &prioridade);
 
 	switch(prioridade)
-		
+		{
+			case 'V':
+      case 'v':
 
-		    printf("Lista: \n ");
+				 printf("Lista: \n ");
 		    while(p != NULL){		
 					if(p->prioridade == 'V' || p-> prioridade == 'v'){
 						printf("-> Paciente: ");
@@ -142,11 +147,15 @@ void mostraListaTipoUrg(paciente *p){
 		        printf("%c" , p->prioridade);
 						printf("\n ");
 		        p = p->prox;
-				
 			  }//if
 		  }//while
-			
-		    printf("Lista: \n ");
+				
+			break;
+
+			case 'A':
+				case'a':
+
+				printf("Lista: \n ");
 		    while(p != NULL){		
 					if(p->prioridade == 'A' || p-> prioridade == 'a'){
 						printf("-> Paciente: ");
@@ -160,18 +169,22 @@ void mostraListaTipoUrg(paciente *p){
 		        p = p->prox;
 		    }//if
 		  }//while
-	
-    
+
+			break;
+
+			default:
+			 printf("digite uma opção valida");
+		}
 }//void lista tipo urgência
 
 void consultarFila(paciente *p){
-   printf(AZUL" \n \n ----- 📋Consultar Situação da Fila ----- \n" RESET);
+ 	printf(AZUL" \n \n ----- 📋Consultar Situação da Fila ----- \n" RESET);
 	printf("Tamanho da fila: ");
 	printf("%d" , tam);
-	printf(" \n");
+	printf(" \n");	
 	printf("Posições ocupadas: ");
 	printf("%d" , tam); 
-	printf(" \n");
+	printf(" de 80 ocupadas\n");
 	printf("Posições livres: ");
 	printf("%d" , 80  - tam); 
 	printf(" \n");
