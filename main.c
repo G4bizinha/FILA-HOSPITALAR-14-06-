@@ -148,7 +148,7 @@ void mostraListaTipoUrg(paciente *p){
   printf("|"); 
   printf(AMARELO" A- Amarelo \n"RESET);
 	printf("Digite a prioridade: ");
-		scanf%c" , &prioridade);
+	scanf("%c" , &prioridade);
 
 	switch(prioridade)
 		{
