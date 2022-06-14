@@ -14,7 +14,7 @@ int controleMenu=1;
 #define RESET "\x1b[0m"
 
 //var globais
-int tam =1; // guarda o tamanho da fila
+int tam=1;
 int amarelo; // guarda a posição da fila amarela
 int verde;// guarda a posiçãoda fila verde
   
@@ -53,7 +53,7 @@ void inserir(paciente **p){
 		switch(prioridade)
 			{
 				case 'A':
-					case'a':
+        case 'a':
 						novo->prioridade = 'A';
 				break;
 
@@ -88,7 +88,7 @@ void remover(paciente **p){
 	
 	paciente  *atual = *p;
 	
-	if(atual == 0){
+	if(atual == NULL){
 		printf(VERMELHO"❗ fila vazia..."RESET);
 	}
 	
@@ -127,8 +127,8 @@ void pesquisar(paciente *p){
 }//void pesquisar
 
 void mostraLista(paciente *p){
-   printf(AZUL" \n \n ----- 📋Visualizar Fila Completa ----- \n" RESET);
-	printf("Lista: \n ");
+   	printf(AZUL" \n \n ----- 📋Visualizar Fila Completa ----- \n" RESET);
+		printf("Lista: \n ");
     while(p != NULL){		
 				printf(" -> Paciente: %d" , p->posicao);
 				printf(" | Nome : ");
@@ -173,7 +173,7 @@ void mostraListaTipoUrg(paciente *p){
 			break;
 
 			case 'A':
-				case'a':
+			case'a':
 
 				printf("Lista: \n ");
 		    while(p != NULL){		
@@ -198,7 +198,6 @@ void mostraListaTipoUrg(paciente *p){
 }//void lista tipo urgência
 
 void consultarFila(paciente *p){
-		
 			if(p !=NULL){
 		 	printf(AZUL" \n \n ----- 📋Consultar Situação da Fila ----- \n" RESET);
 			printf("Tamanho da fila: ");
